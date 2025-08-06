@@ -4,6 +4,7 @@ document。getElementById('fakelink-form').addEventListener('submit', function(e
     const originalUrl = document.getElementById('original-url').value;
     const disguiseText = document.getElementById('disguise-text').value;
     
+    // 编码 URL，确保特殊字符能正常传递
     const encodedUrl = encodeURIComponent(originalUrl);
     const encodedText = encodeURIComponent(disguiseText);
 
@@ -20,3 +21,12 @@ document。getElementById('fakelink-form').addEventListener('submit', function(e
     generatedLink.textContent = fakelink;
     resultContainer.style.display = 'block';
 });
+
+function copyLink() {
+    const linkText = document.getElementById('generated-link').textContent;
+    navigator.clipboard.writeText(linkText).then(() => {
+        alert('链接已复制到剪贴板！');
+    }).catch(err => {
+        console.error('复制失败: ', err);
+    });
+}
