@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚假链接（FakeLink）</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>虚假链接（FakeLink）</h1>
+        <p>给你的朋友一个惊喜！</p>
+        <form id="fakelink-form">
+            <div class="form-group">
+                <label for="original-url">原始链接:</label>
+                <input type="url" id="original-url" placeholder="粘贴你的真实链接" required>
+            </div>
+            <div class="form-group">
+                <label for="disguise-text">伪装文本:</label>
+                <input type="text" id="disguise-text" placeholder="输入你想展示的文字（例如：银行账户异常）" required>
+            </div>
+            <button type="submit">生成虚假链接</button>
+        </form>
+        <div id="result-container" style="display: none;">
+            <h3>你的虚假链接已生成:</h3>
+            <div class="link-box">
+                <p id="generated-link"></p>
+                <button onclick="copyLink()">复制链接</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
